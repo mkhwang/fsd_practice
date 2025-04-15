@@ -34,16 +34,13 @@ class TransactionMaker:
 
     def generate_fake_users(self, num_users: int) -> list:
         users = []
-        for _ in range(num_users):
-            user_id = random.randint(1000, 9999)
+        for idx in range(num_users):
             user_name = self.fake.name()
             users.append({
-                'id': user_id,
+                'id': idx,
                 'name': user_name,
             })
         return users
-
-
 
     def generate_fake_transaction(self, user_count:int, transaction_count:int) -> List[Transaction]:
         result = []
