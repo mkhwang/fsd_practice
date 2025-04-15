@@ -7,5 +7,5 @@ brew install virtualenv
 virtualenv --python=python3.11 .venv
 . .venv/bin/activate
 pip install -r requirements.txt
-cp .env.local .env
+cp .env.sample .env
 ```
