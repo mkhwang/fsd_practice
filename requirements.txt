@@ -1,5 +1,6 @@
 annotated-types==0.7.0
 anyio==4.9.0
+black @ git+https://github.com/psf/black@98a580bbdc217a8b1a47b772d2140ed29cdc587a
 dotenv==0.9.9
 Faker==37.1.0
 fastapi==0.115.12
