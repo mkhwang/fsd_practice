@@ -16,6 +16,17 @@ cp .env.sample .env
 docker-compose up -d 
 ```
 
+```bash
+docker-compose down -V
+```
+
+## HDFS Permission
+```bash
+docker exec -it namenode hdfs dfs -mkdir -p /warehouse/transactions
+docker exec -it namenode hdfs dfs -chown {run_user}:supergroup /warehouse
+docker exec -it namenode hdfs dfs -chown {run_user}:supergroup /warehouse/transactions
+```
+
 ## fastapi RUN
 
 ```bash

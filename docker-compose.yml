@@ -23,28 +23,33 @@ services:
   namenode:
     image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
     container_name: namenode
+    hostname: namenode
+    restart: always
     ports:
-      - "9870:9870"
+      - 9870:9870
+      - 9000:9000
+      - 8020:8020
     volumes:
       - ./data/namenode:/hadoop/dfs/name
     environment:
-      - CLUSTER_NAME=test-hadoop
-
+      - CLUSTER_NAME=test
+    env_file:
+      - ./hadoop.env
   datanode:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
     container_name: datanode
-    depends_on:
-      - namenode
-    ports:
-      - "9864:9864"
+    hostname: datanode
+    restart: always
     volumes:
       - ./data/datanode:/hadoop/dfs/data
     environment:
-      - CLUSTER_NAME=test-hadoop
-      - NAMENODE_HOST=namenode
+      SERVICE_PRECONDITION: "namenode:9870"
+    env_file:
+      - ./hadoop.env
   redis:
     image: redis:7.2
     container_name: redis
+
     ports:
       - "6379:6379"
     volumes:

@@ -17,7 +17,7 @@ class TransactionMaker:
         dotenv.load_dotenv()
         self.user_count = int(os.getenv("TRANSACTION_USER_COUNT", 100))
         self.event_count = int(os.getenv("TRANSACTION_EVENT_COUNT", 1000))
-        self.event_interval = int(os.getenv("TRANSACTION_EVENT_INTERVAL", 100)) * 0.001
+        self.event_interval = int(os.getenv("TRANSACTION_EVENT_INTERVAL", 1)) * 0.001
         self.fake = Faker()
         self.producer = KafkaService()
         self.transaction_topic = os.getenv("TRANSACTION_TOPIC", "transaction-events")
