@@ -1,5 +1,12 @@
 # 이상거래 감지 Practice
 
+## 프로젝트 목표
+- rest api를 이용해 다수의 거래를 생성하여 kafka에 전송
+- 실시간 거래 저장
+  - spark streaming을 이용해 kafka에서 모든거래를 수신하여 hdfs에 저장
+- data pipeline 구축
+  - spark streaming을 이용한 이상거래 후보와 확정된 거래를 redis에 저장하여 fastapi로 제공
+
 ## 설치
 
 ```bash
