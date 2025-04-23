@@ -20,9 +20,8 @@
 - [x] 거래 생성
 - [ ] data pipeline 구축
   - [x] kafka producer
-  - [ ] spark streaming consumer
-  - [ ] redis producer
-  - [ ] hdfs 거래 저장
+  - [x] spark streaming consumer
+  - [ ] hdfs 거래 모든 저장
   - [ ] hdfs 이상 거래 후보 및 확정 거래 저장
 - [x] fastapi로 제공
 
