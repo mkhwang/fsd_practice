@@ -7,11 +7,31 @@
 - data pipeline 구축
   - spark streaming을 이용한 이상거래 후보와 확정된 거래를 redis에 저장하여 fastapi로 제공
 
+## 기술 스택
+- python 3.10
+- fastapi
+- spark
+- hdfs
+- kafka
+- redis
+- docker
+
+## 구현
+- [x] 거래 생성
+- [ ] data pipeline 구축
+  - [x] kafka producer
+  - [ ] spark streaming consumer
+  - [ ] redis producer
+  - [ ] hdfs 거래 저장
+  - [ ] hdfs 이상 거래 후보 및 확정 거래 저장
+- [x] fastapi로 제공
+
+
 ## 설치
 
 ```bash
 brew install virtualenv
-virtualenv --python=python3.11 .venv
+virtualenv --python=python3.10 .venv
 . .venv/bin/activate
 pip install -r requirements.txt
 cp .env.sample .env
